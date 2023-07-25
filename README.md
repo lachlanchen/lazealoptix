@@ -1,7 +1,9 @@
 # Lazeal OptiX
 
-<div style="display: flex; align-items: center;">
-  <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%;" />
+<div style="display: flex;">
+  <div style="display: flex; align-items: center;">
+    <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%;" />
+  </div>
   <img src="./prototype_institute.png" alt="Prototype for Institutions" style="width: 45%;" /> 
 </div>
 
