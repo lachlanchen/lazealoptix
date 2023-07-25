@@ -1,10 +1,12 @@
 # Lazeal OptiX
 
-![Prototype for Individuals](./prototype_individual.jpg)
-*Prototype for Individual Use*
+<p float="left">
+  <img src="./prototype_individual.jpg" alt="Prototype for Individuals" width="45%" />
+  <img src="./prototype_institute.png" alt="Prototype for Institutions" width="45%" /> 
+</p>
 
-![Prototype for Institutions](./prototype_institute.png)
-*Prototype for Institutional Use*
+*Prototype for Individual Use (left) and Institutional Use (right)*
+
 
 ## Project Overview
 Lazeal OptiX is an innovative healthcare technology project. The core of the project is the development of a device that offers advanced diagnostics to users in the comfort of their homes. Using advanced microscopy and biochemical analysis techniques, the device aims to facilitate the early detection of a variety of health issues, contributing to improved healthcare outcomes.
