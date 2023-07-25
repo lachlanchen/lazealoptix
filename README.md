@@ -1,7 +1,7 @@
 # Lazeal OptiX
 
 <p float="left">
-  <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%; padding-top: 25.9%; padding-bottom: 25.9%" />
+  <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%; padding-top: 13%; padding-bottom: 13%" />
   <img src="./prototype_institute.png" alt="Prototype for Institutions" width="45%" /> 
 </p>
 
