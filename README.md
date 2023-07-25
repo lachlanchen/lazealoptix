@@ -1,9 +1,15 @@
 # Lazeal OptiX
 
-<p float="left">
+<!-- <p float="left">
   <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%; padding-top: 13%; padding-bottom: 13%" />
   <img src="./prototype_institute.png" alt="Prototype for Institutions" width="45%" /> 
 </p>
+ -->
+
+ | | |
+|:---:|:---:|
+| <img src="./prototype_individual.jpg" width="45%" /> | <img src="./prototype_institute.png" width="45%" /> |
+| *Prototype for Individuals* | *Prototype for Institutions* |
 
 
 *Prototype for Individual Use (left) and Institutional Use (right)*
