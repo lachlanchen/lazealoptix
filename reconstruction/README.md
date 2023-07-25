@@ -1,0 +1,2 @@
+# Reconstruction
+This folder contains scripts and resources related to the reconstruction of images captured by the Lazeal OptiX device. These scripts implement advanced computational techniques to reconstruct high-resolution images from the lensless imaging system.

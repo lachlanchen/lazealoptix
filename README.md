@@ -1,5 +1,11 @@
 # Lazeal OptiX
 
+![Prototype for Individuals](./prototype_individual.jpg)
+*Prototype for Individual Use*
+
+![Prototype for Institutions](./prototype_institute.png)
+*Prototype for Institutional Use*
+
 ## Project Overview
 Lazeal OptiX is an innovative healthcare technology project. The core of the project is the development of a device that offers advanced diagnostics to users in the comfort of their homes. Using advanced microscopy and biochemical analysis techniques, the device aims to facilitate the early detection of a variety of health issues, contributing to improved healthcare outcomes.
 
@@ -14,6 +20,18 @@ The Lazeal OptiX project is born out of a commitment to reducing suffering and m
 ## Getting Involved
 We welcome collaboration and contributions. If you're interested in getting involved with the Lazeal OptiX project, feel free to submit an issue or a pull request, or contact us directly.
 
+## Notebooks
+
+The notebooks directory contains Jupyter notebooks that document various aspects of the Lazeal OptiX project. These notebooks include code, visualizations, and detailed explanations of the project's methodologies. They serve as an interactive way to explore and understand the project.
+
+### light_source_location
+The light_source_location directory contains notebooks related to the estimation of light source locations. These notebooks feature algorithms and methods used to accurately estimate the position of the light source, which is a crucial aspect of the Lazeal OptiX project.
+
+### multiple_match
+The multiple_match directory contains notebooks and scripts related to the matching of multiple images or patterns. This part of the project involves complex algorithms to accurately match and align images, which is necessary for the reconstruction of high-resolution images from the lensless imaging system.
+
+### reconstruction
+The reconstruction directory contains notebooks related to the reconstruction of images captured by the Lazeal OptiX device. These notebooks document the advanced computational techniques used to reconstruct high-resolution images from the lensless imaging system.
+
 ## Contact
 For further inquiries or collaboration interests, please reach out at contact@lazealoptix.com.
-
