@@ -1,9 +1,21 @@
 # Lazeal OptiX
 
-<p float="left">
+<!-- <p float="left">
   <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 45%; padding-top: 13%; padding-bottom: 13%" />
   <img src="./prototype_institute.png" alt="Prototype for Institutions" width="45%" /> 
-</p>
+</p> -->
+
+<table width="100%">
+  <tr>
+    <td align="center" valign="middle" width="50%">
+      <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 90%" />
+    </td>
+    <td align="center" valign="middle" width="50%">
+      <img src="./prototype_institute.png" alt="Prototype for Institutions" style="width: 90%" /> 
+    </td>
+  </tr>
+</table>
+
 
 
 <!--  | | |
