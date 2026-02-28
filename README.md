@@ -1,11 +1,7 @@
 [English](README.md) · [العربية](i18n/README.ar.md) · [Español](i18n/README.es.md) · [Français](i18n/README.fr.md) · [日本語](i18n/README.ja.md) · [한국어](i18n/README.ko.md) · [Tiếng Việt](i18n/README.vi.md) · [中文 (简体)](i18n/README.zh-Hans.md) · [中文（繁體）](i18n/README.zh-Hant.md) · [Deutsch](i18n/README.de.md) · [Русский](i18n/README.ru.md)
 
 
-> 🌐 **Multilingual status:** `i18n/` is present and reserved for language-specific README files. Linked localized documents are planned/in-progress.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lachlanchen/lachlanchen/main/logos/banner.png" alt="LazyingArt banner" />
-</p>
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # Lazeal OptiX
 
@@ -16,6 +12,19 @@
 ![Jupyter](https://img.shields.io/badge/interface-jupyter-F37626)
 ![OpenCV](https://img.shields.io/badge/cv-opencv%204.x-5C3EE8)
 ![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![Localization](https://img.shields.io/badge/localization-11%20languages-8A4FFF)
+![Platform](https://img.shields.io/badge/platform-linux%2FmacOS-2D9CDB)
+
+> 🌐 **Multilingual status:** `i18n/` is present and reserved for language-specific README files. Linked localized documents are planned/in-progress.
+
+## ✨ At a Glance
+
+| Focus | Location |
+|---|---|
+| Core workflow | `notebooks/` |
+| Environment spec | `notebooks/reconstruction/lensless.yaml` |
+| Component notes | `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/` |
+| Entry docs | `i18n/README.*.md` |
 
 <table width="100%">
   <tr>
@@ -32,13 +41,17 @@
 
 ## Overview
 
-Lazeal OptiX is an innovative healthcare technology project. The core of the project is the development of a device that offers advanced diagnostics to users in the comfort of their homes. Using advanced microscopy and biochemical analysis techniques, the device aims to facilitate the early detection of a variety of health issues, contributing to improved healthcare outcomes.
+Lazeal OptiX is a research/prototype project for lensless imaging workflows in healthcare-adjacent diagnostics. The repository is currently notebook-centric and experimental, and is intended to make advanced diagnostic approaches more accessible in constrained settings.
 
-The Lazeal OptiX project is born out of a commitment to reducing suffering and making health diagnostics more accessible to all. By equipping individuals with the tools they need to take control of their health, we strive to help create a healthier society.
+Core ideas include:
 
-The repository is currently research/prototype-oriented and notebook-centric. Most implementation details and experiments are tracked in Jupyter notebooks under `notebooks/`.
+- lensless image reconstruction,
+- light source localization,
+- multiple-image matching and alignment.
 
-### At a Glance
+The repository is primarily maintained through Jupyter notebooks under `notebooks/`, with module-specific context stored in dedicated directories.
+
+### Repository Status Snapshot
 
 | Area | Current Status |
 |---|---|
@@ -50,15 +63,15 @@ The repository is currently research/prototype-oriented and notebook-centric. Mo
 
 ## Features
 
-1. **Advanced Microscopy:** Leveraging advanced microscopy techniques for detailed analysis.
-2. **Biochemical Analysis:** In-depth biochemical analysis enables detection of various health indicators.
-3. **User-Friendly:** Designed for home use, offering a simple and accessible user interface.
-4. **Compact and Affordable:** Lazeal OptiX is compact and affordably priced, bringing advanced diagnostics to everyday users.
-5. **Lensless Reconstruction Workflows:** Notebook-based computational imaging and reconstruction pipelines.
-6. **Light Source Localization Experiments:** Optimization notebooks for light source position estimation.
-7. **Multiple-Image Matching Utilities:** Notebook and C++ OpenCV workflows for feature matching/alignment.
+1. **Advanced Microscopy Concepts**: advanced optics and image capture patterns for detailed analysis.
+2. **Biochemical / Diagnostic Context**: experimental workflows aimed at health-indicator detection.
+3. **Home-friendly Direction**: designed for accessible use and practical deployment.
+4. **Laptop-first Experience**: notebooks provide the primary execution path.
+5. **Lensless Reconstruction Utilities**: computational pipelines for high-resolution reconstruction.
+6. **Light Source Localization Tools**: experiments on source localization and geometry calibration.
+7. **Multiple Image Matching**: SIFT-based matching, chaining, and alignment utilities.
 
-## Repository Structure
+## Project Structure
 
 ```text
 lazealoptix/
@@ -79,8 +92,18 @@ lazealoptix/
 │   └── README.md
 ├── notebooks/
 │   ├── light_source_location/
+│   │   ├── light_source_location_estimator_v1.4.ipynb
+│   │   ├── light_source_location_estimator_varied_heights_v1.1.4.ipynb
+│   │   └── light_source_location_estimator_varied_heights_v1.1.7.ipynb
 │   ├── multiple_match/
+│   │   ├── multiple_all_combination_v2.ipynb
+│   │   ├── multiple_match.cpp
+│   │   ├── multiple_match_centeralized_v1.6.ipynb
+│   │   └── multiple_match_chain_v1.5.ipynb
 │   └── reconstruction/
+│       ├── dataset_prep.ipynb
+│       ├── lensless.yaml
+│       └── lensless-dropout-one-led-mahuichong.ipynb
 └── i18n/
 ```
 
@@ -94,25 +117,25 @@ lazealoptix/
 
 ## Notebooks
 
-The `notebooks` directory contains Jupyter notebooks that document various aspects of the Lazeal OptiX project. These notebooks include code, visualizations, and detailed explanations of the project's methodologies. They serve as an interactive way to explore and understand the project.
+The `notebooks` directory contains Jupyter notebooks that document the core experimental methods. These notebooks provide code, visualizations, and method notes for each area.
 
 ### `light_source_location`
 
-The `light_source_location` directory contains notebooks related to the estimation of light source locations. These notebooks feature algorithms and methods used to accurately estimate the position of the light source, which is a crucial aspect of the Lazeal OptiX project.
+Contains notebooks related to estimation of light source locations. These methods support source geometry calibration and reconstruction fidelity.
 
 ### `multiple_match`
 
-The `multiple_match` directory contains notebooks and scripts related to the matching of multiple images or patterns. This part of the project involves complex algorithms to accurately match and align images, which is necessary for the reconstruction of high-resolution images from the lensless imaging system.
+Contains notebooks and scripts for image/pattern matching and alignment to support robust registration workflows.
 
 ### `reconstruction`
 
-The `reconstruction` directory contains notebooks related to the reconstruction of images captured by the Lazeal OptiX device. These notebooks document the advanced computational techniques used to reconstruct high-resolution images from the lensless imaging system.
+Contains notebooks related to reconstruction from captured images, including preprocessing and experiment scripts.
 
 ## Prerequisites
 
-- OS: Linux/macOS recommended for current notebook and OpenCV workflows.
-- Python: The provided environment file targets **Python 3.7**.
-- Conda: Required to reproduce the documented `lensless` environment.
+- OS: Linux/macOS recommended for current Conda and OpenCV workflows.
+- Python: environment targets **Python 3.7**.
+- Conda: needed to reproduce the documented `lensless` environment.
 - Jupyter Notebook/Lab.
 - Optional C++ toolchain for `multiple_match.cpp`:
   - `g++` with C++17 support.
@@ -127,7 +150,7 @@ git clone https://github.com/lachlanchen/lazealoptix.git
 cd lazealoptix
 ```
 
-### 2) Create the notebook environment (recommended)
+### 2) Create notebook environment
 
 ```bash
 conda env create -f notebooks/reconstruction/lensless.yaml
@@ -142,7 +165,7 @@ jupyter notebook
 
 ## Usage
 
-This repository is primarily used by opening notebooks and running cells in sequence.
+This repository is primarily used by opening notebooks and running cells in documented order.
 
 ### Reconstruction track
 
@@ -156,17 +179,17 @@ This repository is primarily used by opening notebooks and running cells in sequ
 ### Multiple match track
 
 - Open notebooks under `notebooks/multiple_match/`.
-- Optional C++ utility: `notebooks/multiple_match/multiple_match.cpp`.
+- Optional utility: `notebooks/multiple_match/multiple_match.cpp`.
 
 ## Configuration
 
 ### Conda environment
 
-Primary environment specification lives at:
+Primary environment specification:
 
 - `notebooks/reconstruction/lensless.yaml`
 
-Notable dependency signals from this file include:
+Notable dependencies include:
 
 - `python=3.7`
 - `pytorch=1.9.0`
@@ -175,14 +198,14 @@ Notable dependency signals from this file include:
 
 ### Data and paths
 
-- **Assumption:** notebooks expect local datasets/files that are not centrally declared at repository root.
+- **Assumption:** datasets are local and are not centrally declared at repository root.
 - **Assumption:** the C++ matching utility expects an `all/` directory (relative to its execution path) containing grayscale-readable images.
 
 If your local setup differs, update notebook path cells and the C++ input directory accordingly.
 
 ## Examples
 
-### Run the matching utility (example)
+### Run the matching utility
 
 ```bash
 cd notebooks/multiple_match
@@ -194,7 +217,7 @@ Expected behavior:
 
 - Reads images from `all/`
 - Computes chained SIFT-based matches across images
-- Writes an output image named like `result_<timestamp>.png`
+- Writes an output image like `result_<timestamp>.png`
 
 ### Launch a specific notebook
 
@@ -205,45 +228,47 @@ jupyter notebook notebooks/reconstruction/dataset_prep.ipynb
 
 ## Development Notes
 
-- The repository currently has no root-level packaging (`pyproject.toml`, `requirements.txt`, or `setup.py`) and no CI/test harness at root.
-- Work is experiment-first: notebooks are source-of-truth for most algorithms.
-- `camera/`, `light_source/`, `reconstruction/`, and `three_axis_cnc/` currently provide high-level module descriptions and can be expanded with runbooks over time.
-- `i18n/` exists and is reserved for multilingual README variants.
+- No root-level packaging manifest (`pyproject.toml`, `requirements.txt`, `setup.py`) or CI/test harness is currently present.
+- Work is experiment-first; notebooks are the source-of-truth for current algorithms.
+- `camera/`, `light_source/`, `reconstruction/`, and `three_axis_cnc/` contain component-level descriptions and are good extension points for runbooks.
+- `i18n/` is prepped for language-specific documentation.
 
 ## Troubleshooting
 
-- **Conda solve issues:** update Conda and retry environment creation.
-- **Kernel mismatch in notebooks:** ensure the active kernel matches `lensless` where required.
-- **OpenCV/SIFT compile errors:** install OpenCV contrib modules and verify `opencv2/xfeatures2d.hpp` availability.
-- **Notebook file-not-found errors:** check dataset paths and relative directories expected by notebook cells.
-- **C++ matcher reads no images:** verify `notebooks/multiple_match/all/` exists and contains valid image files.
+- **Conda solve issues:** update Conda, verify channel ordering, and retry environment creation.
+- **Kernel mismatch in notebooks:** confirm Jupyter is using the `lensless` environment.
+- **OpenCV/SIFT compile errors:** install OpenCV contrib modules and validate `opencv2/xfeatures2d.hpp` availability.
+- **Notebook file-not-found errors:** verify expected datasets and notebook-relative paths.
+- **Matcher reads no images:** ensure `notebooks/multiple_match/all/` exists with valid image files.
 
 ## Roadmap
 
 - Expand module-level runbooks in `camera/`, `light_source/`, `reconstruction/`, and `three_axis_cnc/`.
-- Document dataset contracts and provide reproducible sample data pointers.
-- Add reproducible scripts for key notebook pipelines.
-- Add test/validation checks for reconstruction and matching outputs.
+- Document dataset contracts and provide reproducible sample-data references.
+- Add script wrappers for major notebook pipelines.
+- Add validation checks for reconstruction and matching outputs.
 - Complete multilingual README files under `i18n/`.
 
 ## Getting Involved
 
-We welcome collaboration and contributions. If you're interested in getting involved with the Lazeal OptiX project, feel free to submit an issue or a pull request, or contact us directly.
+We welcome collaboration and contributions.
+
+- Open an issue for discussion.
+- Submit a pull request for scoped documentation or experimental changes.
+- Contact maintainers for hardware and protocol-level changes before large refactors.
 
 ## Contributing
 
 1. Fork the repository.
 2. Create a feature branch.
 3. Keep changes scoped and documented (especially for notebooks).
-4. Open a pull request describing motivation, method, and validation.
+4. Open a pull request with motivation, method, and any validation notes.
 
-If you plan major hardware/protocol changes, opening an issue first is recommended for alignment.
+## ❤️ Support
 
-## Support
-
-No dedicated funding/sponsorship metadata is currently declared in this repository.
-
-If this changes, sponsorship and donation details should be added here without removing existing technical documentation.
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
 ## License
 

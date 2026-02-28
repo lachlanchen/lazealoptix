@@ -1,11 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
-> 🌐 **다국어 상태:** `i18n/` 디렉터리는 언어별 README 파일을 위해 마련되어 있습니다. 링크된 현지화 문서는 계획/진행 중입니다.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lachlanchen/lachlanchen/main/logos/banner.png" alt="LazyingArt banner" />
-</p>
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # Lazeal OptiX
 
@@ -16,6 +12,19 @@
 ![Jupyter](https://img.shields.io/badge/interface-jupyter-F37626)
 ![OpenCV](https://img.shields.io/badge/cv-opencv%204.x-5C3EE8)
 ![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![Localization](https://img.shields.io/badge/localization-11%20languages-8A4FFF)
+![Platform](https://img.shields.io/badge/platform-linux%2FmacOS-2D9CDB)
+
+> 🌐 **다국어 상태:** `i18n/`가 존재하며 언어별 README 저장을 위해 준비되어 있습니다. 다국어 문서는 계획/작업 중입니다.
+
+## ✨ 한눈에 보기
+
+| 항목 | 위치 |
+|---|---|
+| 핵심 워크플로우 | `notebooks/` |
+| 환경 사양 | `notebooks/reconstruction/lensless.yaml` |
+| 구성 요소 노트 | `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/` |
+| 진입 문서 | `i18n/README.*.md` |
 
 <table width="100%">
   <tr>
@@ -28,37 +37,41 @@
   </tr>
 </table>
 
-*개인용 프로토타입(왼쪽)과 기관용 프로토타입(오른쪽)*
+*좌측: 개인용 프로토타입, 우측: 기관용 프로토타입*
 
 ## 개요
 
-Lazeal OptiX는 혁신적인 헬스케어 기술 프로젝트입니다. 이 프로젝트의 핵심은 사용자가 집에서 편안하게 고급 진단을 받을 수 있도록 돕는 장치 개발에 있습니다. 고급 현미경 기술과 생화학 분석 기법을 활용해 다양한 건강 문제를 조기에 발견할 수 있도록 하며, 이를 통해 의료 결과 개선에 기여하는 것을 목표로 합니다.
+Lazeal OptiX는 의료 진단에 인접한 분야에서 렌즈리스 이미징 워크플로우를 연구하는 연구/프로토타입 프로젝트입니다. 현재 저장소는 주로 노트북 기반이며 실험적 성격으로, 제한된 환경에서도 고급 진단 접근성을 높이는 데 목적이 있습니다.
 
-Lazeal OptiX 프로젝트는 고통을 줄이고 건강 진단의 접근성을 넓히겠다는 의지에서 시작되었습니다. 개인이 자신의 건강을 주도적으로 관리할 수 있는 도구를 제공함으로써, 더 건강한 사회를 만드는 데 기여하고자 합니다.
+핵심 아이디어는 다음과 같습니다.
 
-현재 이 저장소는 연구/프로토타입 중심이며 노트북 중심으로 운영됩니다. 대부분의 구현 세부사항과 실험은 `notebooks/` 아래의 Jupyter 노트북에서 관리됩니다.
+- 렌즈리스 이미지 재구성
+- 광원 위치 추정
+- 다중 이미지 매칭 및 정렬
 
-### 한눈에 보기
+이 저장소는 주로 `notebooks/` 아래의 Jupyter 노트북으로 유지되며, 모듈별 맥락은 각 하위 디렉터리에 정리되어 있습니다.
 
-| 영역 | 현재 상태 |
+### 저장소 상태 요약
+
+| 항목 | 현재 상태 |
 |---|---|
 | 프로젝트 성숙도 | 연구 프로토타입 |
 | 주요 실행 모델 | Jupyter 노트북 워크플로우 |
-| 주요 실험 도메인 | 재구성, 광원 위치 추정, 다중 이미지 매칭 |
-| 루트 패키징/CI | 현재 선언되지 않음 |
+| 주요 실험 영역 | 재구성, 광원 위치 추정, 다중 이미지 매칭 |
+| 루트 레벨 패키징/CI | 현재 미선언 |
 | 다국어 문서 | `i18n/` 디렉터리 스캐폴드 존재 |
 
-## 기능
+## 특징
 
-1. **고급 현미경 분석:** 고급 현미경 기법을 활용해 정밀한 분석을 수행합니다.
-2. **생화학 분석:** 심층 생화학 분석으로 다양한 건강 지표를 감지할 수 있습니다.
-3. **사용자 친화성:** 가정에서 사용할 수 있도록 간단하고 접근성 높은 사용자 경험을 제공합니다.
-4. **소형·합리적 비용:** Lazeal OptiX는 소형이고 가격 접근성이 높아, 고급 진단 기술을 일상 사용자에게 제공합니다.
-5. **렌즈리스 재구성 워크플로우:** 노트북 기반 계산 이미징 및 재구성 파이프라인을 제공합니다.
-6. **광원 위치 추정 실험:** 광원 위치 추정을 위한 최적화 노트북을 포함합니다.
-7. **다중 이미지 매칭 유틸리티:** 특징 매칭/정렬을 위한 노트북 및 C++ OpenCV 워크플로우를 제공합니다.
+1. **고급 현미경 개념**: 정밀 분석을 위한 고급 광학 및 촬영 패턴.
+2. **생화학/진단적 맥락**: 건강 지표 탐지에 초점을 둔 실험 워크플로우.
+3. **가정 중심 지향**: 접근성과 실용적 배치를 염두에 둔 설계.
+4. **랩톱 우선 경험**: 노트북이 주 실행 경로입니다.
+5. **렌즈리스 재구성 도구**: 고해상도 재구성을 위한 계산 파이프라인.
+6. **광원 위치 추정 도구**: 광원 정밀 추정과 기하 보정 실험.
+7. **다중 이미지 매칭**: SIFT 기반 매칭, 체이닝, 정렬 유틸리티.
 
-## 저장소 구조
+## 프로젝트 구조
 
 ```text
 lazealoptix/
@@ -79,110 +92,121 @@ lazealoptix/
 │   └── README.md
 ├── notebooks/
 │   ├── light_source_location/
+│   │   ├── light_source_location_estimator_v1.4.ipynb
+│   │   ├── light_source_location_estimator_varied_heights_v1.1.4.ipynb
+│   │   └── light_source_location_estimator_varied_heights_v1.1.7.ipynb
 │   ├── multiple_match/
+│   │   ├── multiple_all_combination_v2.ipynb
+│   │   ├── multiple_match.cpp
+│   │   ├── multiple_match_centeralized_v1.6.ipynb
+│   │   └── multiple_match_chain_v1.5.ipynb
 │   └── reconstruction/
+│       ├── dataset_prep.ipynb
+│       ├── lensless.yaml
+│       └── lensless-dropout-one-led-mahuichong.ipynb
 └── i18n/
 ```
 
-### 모듈 메모
+### 모듈 노트
 
-- `camera/`: 고해상도 샘플 캡처를 위한 카메라 사용 관련 스크립트/리소스.
+- `camera/`: 고해상도 샘플 촬영을 위한 카메라 사용 관련 스크립트/리소스.
 - `light_source/`: 광원 제어 및 최적화를 위한 스크립트/리소스.
-- `reconstruction/`: 계산 기반 재구성을 위한 스크립트/리소스.
-- `three_axis_cnc/`: 3축 CNC 위치 제어/운영을 위한 스크립트/리소스.
-- `notebooks/`: 실험과 방법론을 위한 핵심 기술 작업 공간.
+- `reconstruction/`: 계산 기반 재구성 스크립트/리소스.
+- `three_axis_cnc/`: 3축 CNC 위치 제어/운영 스크립트/리소스.
+- `notebooks/`: 실험과 방법론의 주요 기술 작업 공간.
 
 ## 노트북
 
-`notebooks` 디렉터리에는 Lazeal OptiX 프로젝트의 다양한 측면을 설명하는 Jupyter 노트북이 포함되어 있습니다. 이 노트북들은 코드, 시각화, 그리고 프로젝트 방법론에 대한 상세 설명을 담고 있으며, 프로젝트를 인터랙티브하게 탐색하고 이해할 수 있는 수단을 제공합니다.
+`notebooks` 디렉터리에는 핵심 실험 방법을 문서화한 Jupyter 노트북이 포함됩니다. 각 노트북은 코드, 시각화, 방법 노트를 제공해 해당 주제를 설명합니다.
 
 ### `light_source_location`
 
-`light_source_location` 디렉터리에는 광원 위치 추정과 관련된 노트북이 포함되어 있습니다. 이 노트북들에는 광원 위치를 정확히 추정하기 위한 알고리즘과 방법이 담겨 있으며, 이는 Lazeal OptiX 프로젝트의 핵심 요소입니다.
+광원 위치 추정을 다루는 노트북을 포함합니다. 이 방법은 광원 기하 보정과 재구성 정확도 향상에 활용됩니다.
 
 ### `multiple_match`
 
-`multiple_match` 디렉터리에는 여러 이미지 또는 패턴의 매칭과 관련된 노트북 및 스크립트가 포함되어 있습니다. 이 영역은 이미지들을 정확히 매칭하고 정렬하기 위한 복잡한 알고리즘을 다루며, 렌즈리스 이미징 시스템에서 고해상도 이미지를 재구성하기 위해 필요합니다.
+이미지/패턴 매칭과 정렬을 위한 노트북과 스크립트를 제공합니다. 이를 통해 정합성이 강건한 등록 워크플로우를 지원합니다.
 
 ### `reconstruction`
 
-`reconstruction` 디렉터리에는 Lazeal OptiX 장치로 캡처한 이미지를 재구성하는 노트북이 포함되어 있습니다. 이 노트북들은 렌즈리스 이미징 시스템에서 고해상도 이미지를 복원하기 위해 사용되는 고급 계산 기법을 문서화합니다.
+촬영 이미지로부터의 재구성을 다루는 노트북을 포함하며, 전처리 및 실험 스크립트를 다룹니다.
 
 ## 사전 요구사항
 
-- OS: 현재 노트북 및 OpenCV 워크플로우 기준으로 Linux/macOS 권장.
-- Python: 제공된 환경 파일은 **Python 3.7**을 대상으로 합니다.
-- Conda: 문서화된 `lensless` 환경 재현에 필요합니다.
+- OS: 현재 Conda 및 OpenCV 워크플로우를 기준으로 Linux/macOS 권장.
+- Python: 환경은 **Python 3.7**을 대상으로 합니다.
+- Conda: 문서화된 `lensless` 환경을 재현하기 위해 필요합니다.
 - Jupyter Notebook/Lab.
-- `multiple_match.cpp`를 위한 선택적 C++ 툴체인:
-  - C++17을 지원하는 `g++`.
-  - contrib 모듈이 포함된 OpenCV 4.x (`opencv2/xfeatures2d.hpp` / SIFT).
+- `multiple_match.cpp`용 선택적 C++ 툴체인:
+  - C++17을 지원하는 `g++`
+  - OpenCV 4.x의 contrib 모듈 (`opencv2/xfeatures2d.hpp` / SIFT)
 
 ## 설치
 
 ### 1) 클론
 
 ```bash
+
 git clone https://github.com/lachlanchen/lazealoptix.git
 cd lazealoptix
 ```
 
-### 2) 노트북 환경 생성 (권장)
+### 2) 노트북 환경 생성
 
 ```bash
 conda env create -f notebooks/reconstruction/lensless.yaml
 conda activate lensless
 ```
 
-### 3) Jupyter 시작
+### 3) Jupyter 실행
 
 ```bash
 jupyter notebook
 ```
 
-## 사용 방법
+## 사용법
 
-이 저장소는 주로 노트북을 열어 셀을 순서대로 실행하는 방식으로 사용합니다.
+이 저장소는 주로 노트북을 열고 문서화된 순서대로 셀을 실행하는 방식으로 사용합니다.
 
 ### 재구성 트랙
 
-- 데이터셋 준비를 위해 `notebooks/reconstruction/dataset_prep.ipynb`를 엽니다.
-- 재구성/학습 실험을 위해 `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb`를 엽니다.
+- `notebooks/reconstruction/dataset_prep.ipynb`를 열어 데이터셋을 준비합니다.
+- `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb`를 열어 재구성/학습 실험을 수행합니다.
 
-### 광원 위치 추정 트랙
+### 광원 위치 추적 트랙
 
 - `notebooks/light_source_location/` 아래 노트북을 엽니다.
 
 ### 다중 매칭 트랙
 
 - `notebooks/multiple_match/` 아래 노트북을 엽니다.
-- 선택적 C++ 유틸리티: `notebooks/multiple_match/multiple_match.cpp`.
+- 선택 유틸리티: `notebooks/multiple_match/multiple_match.cpp`
 
 ## 구성
 
 ### Conda 환경
 
-기본 환경 명세 파일 위치:
+주요 환경 명세:
 
 - `notebooks/reconstruction/lensless.yaml`
 
-이 파일에서 확인할 수 있는 주요 의존성 신호:
+주요 의존성 항목:
 
 - `python=3.7`
 - `pytorch=1.9.0`
 - `pyro-ppl`
-- 노트북의 컴퓨터 비전 워크플로우와 연관된 `opencv` 계열 의존성
+- 노트북에서 사용하는 OpenCV 기반 컴퓨터 비전 워크플로우 의존성
 
-### 데이터 및 경로
+### 데이터와 경로
 
-- **가정:** 노트북은 저장소 루트에서 일괄 선언되지 않은 로컬 데이터셋/파일을 기대합니다.
-- **가정:** C++ 매칭 유틸리티는 실행 경로 기준 상대 위치의 `all/` 디렉터리에 그레이스케일로 읽을 수 있는 이미지를 기대합니다.
+- **가정:** 데이터셋은 로컬에 있으며, 저장소 루트에서 중앙에서 선언되지 않습니다.
+- **가정:** C++ 매칭 유틸리티는 실행 경로 기준 상대 경로의 `all/` 폴더에 회색조로 읽을 수 있는 이미지가 존재한다고 가정합니다.
 
-로컬 설정이 다르다면 노트북 내 경로 셀과 C++ 입력 디렉터리를 해당 환경에 맞게 수정하세요.
+로컬 환경이 다르면 노트북의 경로 셀과 C++ 입력 디렉터리를 해당 환경에 맞게 수정하세요.
 
 ## 예제
 
-### 매칭 유틸리티 실행 (예시)
+### 매칭 유틸리티 실행
 
 ```bash
 cd notebooks/multiple_match
@@ -192,8 +216,8 @@ g++ -std=c++17 multiple_match.cpp -o multiple_match `pkg-config --cflags --libs 
 
 예상 동작:
 
-- `all/`에서 이미지를 읽음
-- 이미지 전반에 걸쳐 체인형 SIFT 기반 매칭 수행
+- `all/`에서 이미지 읽기
+- 이미지 전반에 걸쳐 체인형 SIFT 매칭 계산
 - `result_<timestamp>.png` 형식의 출력 이미지 생성
 
 ### 특정 노트북 실행
@@ -205,45 +229,41 @@ jupyter notebook notebooks/reconstruction/dataset_prep.ipynb
 
 ## 개발 노트
 
-- 저장소 루트에는 현재 패키징 파일(`pyproject.toml`, `requirements.txt`, `setup.py`)과 CI/테스트 하네스가 없습니다.
-- 작업 방식은 실험 우선이며, 대부분의 알고리즘에서 노트북이 사실상의 단일 진실 소스(source-of-truth)입니다.
-- `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/`는 현재 상위 수준 모듈 설명을 제공하며, 점진적으로 운영 런북을 확장할 수 있습니다.
-- `i18n/`은 다국어 README 변형을 위해 존재하며 해당 용도로 예약되어 있습니다.
+- 루트 레벨 패키징 매니페스트(`pyproject.toml`, `requirements.txt`, `setup.py`) 또는 CI/테스트 하네스가 현재 없습니다.
+- 작업은 실험 우선이며, 노트북이 현재 알고리즘의 사실상 소스 오브 트루스입니다.
+- `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/`에는 모듈 수준의 설명이 있으며, 향후 실행 매뉴얼(런북)을 확장하기 좋은 진입점입니다.
+- `i18n/`는 언어별 문서화를 위해 준비되어 있습니다.
 
 ## 문제 해결
 
-- **Conda 해결(의존성) 문제:** Conda를 업데이트한 뒤 환경 생성을 다시 시도하세요.
-- **노트북 커널 불일치:** 필요한 경우 활성 커널이 `lensless`와 일치하는지 확인하세요.
+- **Conda 의존성 해결 문제:** Conda를 업데이트하고 채널 순서를 확인한 뒤 환경 생성을 다시 시도하세요.
+- **노트북 커널 불일치:** Jupyter가 `lensless` 환경을 사용 중인지 확인하세요.
 - **OpenCV/SIFT 컴파일 오류:** OpenCV contrib 모듈을 설치하고 `opencv2/xfeatures2d.hpp` 사용 가능 여부를 확인하세요.
-- **노트북 파일 찾기 오류:** 노트북 셀에서 기대하는 데이터셋 경로와 상대 디렉터리를 점검하세요.
-- **C++ 매처가 이미지를 읽지 못함:** `notebooks/multiple_match/all/` 경로 존재 여부와 유효 이미지 파일 포함 여부를 확인하세요.
+- **노트북 파일을 찾을 수 없음:** 기대 데이터셋과 노트북 상대 경로를 확인하세요.
+- **매처가 이미지를 읽지 못함:** `notebooks/multiple_match/all/`에 유효한 이미지 파일이 있는지 확인하세요.
 
 ## 로드맵
 
-- `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/`의 모듈별 런북 확장.
-- 데이터셋 계약(contract) 문서화 및 재현 가능한 샘플 데이터 포인터 제공.
-- 핵심 노트북 파이프라인용 재현 가능한 스크립트 추가.
-- 재구성 및 매칭 결과에 대한 테스트/검증 체크 추가.
-- `i18n/` 아래 다국어 README 파일 완성.
+- `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/`의 모듈별 런북을 확장합니다.
+- 데이터셋 계약을 문서화하고 재현 가능한 샘플 데이터 참조를 제공합니다.
+- 주요 노트북 파이프라인을 위한 스크립트 래퍼를 추가합니다.
+- 재구성 및 매칭 결과의 유효성 검증 체크를 추가합니다.
+- `i18n/` 아래 다국어 README 파일을 완료합니다.
 
-## 참여하기
+## 참여 방법
 
-협업과 기여를 환영합니다. Lazeal OptiX 프로젝트에 참여하고 싶다면 이슈나 풀 리퀘스트를 제출하거나, 직접 연락해 주세요.
+협업과 기여를 환영합니다.
 
-## 기여 가이드
+- 이슈를 열어 논의하세요.
+- 문서 또는 실험 변경의 범위를 정해 풀 리퀘스트를 제출하세요.
+- 하드웨어/프로토콜 수준 변경은 대형 리팩터링 전 유지보수자에게 먼저 연락하세요.
 
-1. 저장소를 포크합니다.
-2. 기능 브랜치를 생성합니다.
-3. 변경 범위를 명확히 유지하고 문서화합니다(특히 노트북 변경).
-4. 동기, 방법, 검증을 설명하는 풀 리퀘스트를 엽니다.
+## 기여
 
-하드웨어/프로토콜의 큰 변경을 계획한다면 정렬을 위해 먼저 이슈를 여는 것을 권장합니다.
-
-## 지원
-
-이 저장소에는 현재 전용 펀딩/스폰서십 메타데이터가 선언되어 있지 않습니다.
-
-향후 변경될 경우, 기존 기술 문서를 제거하지 않은 채 이 섹션에 스폰서십 및 후원 정보를 추가해야 합니다.
+1. 저장소를 포크하세요.
+2. 기능 브랜치를 생성하세요.
+3. 변경 범위를 유지하고 문서화하세요(특히 노트북 변경 시).
+4. 동기, 방법, 검증 노트를 포함해 풀 리퀘스트를 제출하세요.
 
 ## 라이선스
 
@@ -253,4 +273,11 @@ jupyter notebook notebooks/reconstruction/dataset_prep.ipynb
 
 ## 문의
 
-추가 문의 또는 협업 제안은 `contact@lazealoptix.com`으로 연락해 주세요.
+추가 문의나 협업 제안은 `contact@lazealoptix.com`으로 보내주세요.
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |

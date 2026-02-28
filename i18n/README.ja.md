@@ -1,11 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
-> 🌐 **多言語対応状況:** `i18n/` は言語別 README ファイル用に確保されています。リンク先のローカライズ文書は計画中/作成中です。
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lachlanchen/lachlanchen/main/logos/banner.png" alt="LazyingArt banner" />
-</p>
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # Lazeal OptiX
 
@@ -16,49 +12,66 @@
 ![Jupyter](https://img.shields.io/badge/interface-jupyter-F37626)
 ![OpenCV](https://img.shields.io/badge/cv-opencv%204.x-5C3EE8)
 ![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![Localization](https://img.shields.io/badge/localization-11%20languages-8A4FFF)
+![Platform](https://img.shields.io/badge/platform-linux%2FmacOS-2D9CDB)
+
+> 🌐 **多言語対応状況:** `i18n/` が存在し、言語別 README ファイル用に確保されています。リンク済みのローカライズ文書は計画中または作成中です。
+
+## ✨ 概要
+
+| Focus | Location |
+|---|---|
+| コアワークフロー | `notebooks/` |
+| 環境定義 | `notebooks/reconstruction/lensless.yaml` |
+| コンポーネントノート | `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/` |
+| 主要なドキュメント | `i18n/README.*.md` |
 
 <table width="100%">
   <tr>
     <td align="center" valign="middle" width="50%">
-      <img src="./prototype_individual.jpg" alt="Prototype for Individuals" style="width: 90%" />
+      <img src="./prototype_individual.jpg" alt="個人向けプロトタイプ" style="width: 90%" />
     </td>
     <td align="center" valign="middle" width="50%">
-      <img src="./prototype_institute.png" alt="Prototype for Institutions" style="width: 90%" />
+      <img src="./prototype_institute.png" alt="機関向けプロトタイプ" style="width: 90%" />
     </td>
   </tr>
 </table>
 
-*個人利用向けプロトタイプ（左）と機関利用向けプロトタイプ（右）*
+*左: 個人向けプロトタイプ、右: 機関向けプロトタイプ*
 
-## 概要
+## Overview
 
-Lazeal OptiX は、革新的なヘルスケア技術プロジェクトです。プロジェクトの中核は、自宅にいながら高度な診断を利用者に提供するデバイスの開発にあります。先進的な顕微鏡技術と生化学解析技術を活用し、さまざまな健康課題の早期検知を促進することで、医療アウトカムの改善を目指しています。
+Lazeal OptiX は、ヘルスケア関連の診断分野におけるレンズレス撮像ワークフロー向けに設計された研究/プロトタイププロジェクトです。本リポジトリは現在ノートブック中心かつ実験的な構成であり、制約のある環境でも高度な診断アプローチを使いやすくすることを目的としています。
 
-Lazeal OptiX プロジェクトは、苦しみを減らし、健康診断へのアクセスをより広くするという取り組みから生まれました。個人が自分の健康を主体的に管理できるツールを提供することで、より健康な社会づくりに貢献したいと考えています。
+主要なコンセプトは以下のとおりです。
 
-このリポジトリは現在、研究プロトタイプ志向かつノートブック中心の構成です。実装の詳細や実験の多くは `notebooks/` 配下の Jupyter notebooks で管理されています。
+- レンズレス画像再構成
+- 光源の位置推定
+- 複数画像のマッチングとアラインメント
 
-### 要点
+本リポジトリは主として `notebooks/` 配下の Jupyter ノートブックで管理され、モジュールごとのコンテキストは各サブディレクトリに格納されています。
 
-| 項目 | 現在の状況 |
+### リポジトリステータス
+
+| 領域 | 現在の状態 |
 |---|---|
 | プロジェクト成熟度 | 研究プロトタイプ |
 | 主な実行モデル | Jupyter ノートブックワークフロー |
 | 主な実験領域 | 再構成、光源位置推定、複数画像マッチング |
-| ルートでのパッケージング/CI | 現時点では未定義 |
-| 多言語ドキュメント | `i18n/` ディレクトリのひな形あり |
+| ルートでのパッケージ/CI | 現時点では未定義 |
+| 多言語ドキュメント | `i18n/` ディレクトリのスケルトンが存在 |
 
-## 特徴
+## Features
 
-1. **高度顕微鏡技術:** 詳細解析のために先進的な顕微鏡技術を活用。
-2. **生化学解析:** 深い生化学解析により、さまざまな健康指標の検出を実現。
-3. **ユーザーフレンドリー:** 家庭利用を前提に、シンプルで利用しやすい UI を提供。
-4. **コンパクトかつ手頃:** Lazeal OptiX は小型で価格も手頃であり、日常ユーザーに高度診断を届けます。
-5. **レンズレス再構成ワークフロー:** ノートブックベースの計算イメージングおよび再構成パイプライン。
-6. **光源位置推定実験:** 光源位置推定のための最適化ノートブック。
-7. **複数画像マッチングユーティリティ:** 特徴点マッチング/アライメントのためのノートブックおよび C++ OpenCV ワークフロー。
+1. **Advanced Microscopy Concepts**: 詳細解析に必要な高度な光学設計と画像取得パターン。
+2. **Biochemical / Diagnostic Context**: 健康指標検出を想定した実験ワークフロー。
+3. **Home-friendly Direction**: 実用導入しやすい設計と、現場での運用性を重視。
+4. **Laptop-first Experience**: ノートブックを主要な実行経路として採用。
+5. **Lensless Reconstruction Utilities**: 高解像度再構成のための計算パイプライン。
+6. **Light Source Localization Tools**: 光源位置推定と幾何キャリブレーションの実験。
+7. **Multiple Image Matching**: SIFT ベースのマッチング、チェイン処理、位置合わせユーティリティ。
 
-## リポジトリ構成
+## Project Structure
 
 ```text
 lazealoptix/
@@ -79,110 +92,121 @@ lazealoptix/
 │   └── README.md
 ├── notebooks/
 │   ├── light_source_location/
+│   │   ├── light_source_location_estimator_v1.4.ipynb
+│   │   ├── light_source_location_estimator_varied_heights_v1.1.4.ipynb
+│   │   └── light_source_location_estimator_varied_heights_v1.1.7.ipynb
 │   ├── multiple_match/
+│   │   ├── multiple_all_combination_v2.ipynb
+│   │   ├── multiple_match.cpp
+│   │   ├── multiple_match_centeralized_v1.6.ipynb
+│   │   └── multiple_match_chain_v1.5.ipynb
 │   └── reconstruction/
+│       ├── dataset_prep.ipynb
+│       ├── lensless.yaml
+│       └── lensless-dropout-one-led-mahuichong.ipynb
 └── i18n/
 ```
 
-### モジュールメモ
+### Module Notes
 
-- `camera/`: 高解像度サンプル取得のためのカメラ利用に関するスクリプト/リソース。
-- `light_source/`: 光源制御および最適化に関するスクリプト/リソース。
-- `reconstruction/`: 計算再構成に関するスクリプト/リソース。
-- `three_axis_cnc/`: 3 軸 CNC の位置決め/制御に関するスクリプト/リソース。
-- `notebooks/`: 実験と手法のための主要な技術ワークスペース。
+- `camera/`: 高解像度サンプル取得向けのカメラ利用スクリプト/リソース。
+- `light_source/`: 光源制御・最適化向けのスクリプト/リソース。
+- `reconstruction/`: 計算再構成向けのスクリプト/リソース。
+- `three_axis_cnc/`: 3 軸 CNC の位置決め・制御向けスクリプト/リソース。
+- `notebooks/`: 実験と手法の主要技術ワークスペース。
 
 ## Notebooks
 
-`notebooks` ディレクトリには、Lazeal OptiX プロジェクトのさまざまな側面を記録した Jupyter notebooks が含まれています。これらの notebooks には、コード、可視化、そしてプロジェクト手法の詳細な説明が含まれます。プロジェクトを探索し理解するためのインタラクティブな手段として機能します。
+`notebooks` ディレクトリには、主要実験手法を説明する Jupyter ノートブックが含まれています。これらのノートブックでは、コード、可視化、方法ノートを領域ごとに提供しています。
 
 ### `light_source_location`
 
-`light_source_location` ディレクトリには、光源位置推定に関する notebooks が含まれています。これらの notebooks には、光源位置を高精度に推定するためのアルゴリズムや手法が含まれており、Lazeal OptiX プロジェクトの重要な要素となっています。
+光源位置推定に関するノートブックを含みます。これらの手法は、光源幾何キャリブレーションと再構成精度の維持を支援します。
 
 ### `multiple_match`
 
-`multiple_match` ディレクトリには、複数画像またはパターンのマッチングに関する notebooks とスクリプトが含まれています。この領域では、レンズレス撮像システムから高解像度画像を再構成するために必要な、画像の正確なマッチングと位置合わせを実現する複雑なアルゴリズムを扱います。
+画像/パターンのマッチングとアラインメントを扱うノートブックとスクリプトを含み、堅牢なレジストレーションワークフローを支援します。
 
 ### `reconstruction`
 
-`reconstruction` ディレクトリには、Lazeal OptiX デバイスで取得した画像の再構成に関する notebooks が含まれています。これらの notebooks では、レンズレス撮像システムから高解像度画像を再構成するために使われる高度な計算技術を記録しています。
+取得画像からの再構成に関するノートブックを含み、前処理と実験スクリプトを含みます。
 
-## 前提条件
+## Prerequisites
 
-- OS: 現在の notebook と OpenCV ワークフローでは Linux/macOS を推奨。
-- Python: 提供されている環境ファイルは **Python 3.7** を対象。
+- OS: 現在の Conda および OpenCV ワークフローでは Linux/macOS を推奨。
+- Python: 環境定義は **Python 3.7** を対象。
 - Conda: 文書化された `lensless` 環境を再現するために必要。
 - Jupyter Notebook/Lab。
 - `multiple_match.cpp` 用の任意 C++ ツールチェーン:
-  - C++17 対応の `g++`。
-  - contrib modules を含む OpenCV 4.x（`opencv2/xfeatures2d.hpp` / SIFT）。
+  - C++17 に対応した `g++`
+  - OpenCV 4.x の contrib モジュール（`opencv2/xfeatures2d.hpp` / SIFT）
 
-## インストール
+## Installation
 
-### 1) Clone
+### 1) クローン
 
 ```bash
+
 git clone https://github.com/lachlanchen/lazealoptix.git
 cd lazealoptix
 ```
 
-### 2) notebook 環境を作成（推奨）
+### 2) notebook 用環境の作成
 
 ```bash
 conda env create -f notebooks/reconstruction/lensless.yaml
 conda activate lensless
 ```
 
-### 3) Jupyter を起動
+### 3) Jupyter の起動
 
 ```bash
 jupyter notebook
 ```
 
-## 使い方
+## Usage
 
-このリポジトリは主に notebooks を開き、セルを順番に実行して利用します。
+このリポジトリは主にノートブックを開いて、記載順にセルを実行して利用します。
 
-### 再構成トラック
+### Reconstruction track
 
-- データセット準備には `notebooks/reconstruction/dataset_prep.ipynb` を開いてください。
-- 再構成/学習実験には `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb` を開いてください。
+- `notebooks/reconstruction/dataset_prep.ipynb` を開き、データセットを準備します。
+- `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb` を開き、再構成/学習実験を実行します。
 
-### 光源位置推定トラック
+### Light source localization track
 
-- `notebooks/light_source_location/` 配下の notebooks を開いてください。
+- `notebooks/light_source_location/` 以下のノートブックを開きます。
 
-### 複数マッチングトラック
+### Multiple match track
 
-- `notebooks/multiple_match/` 配下の notebooks を開いてください。
-- 任意の C++ ユーティリティ: `notebooks/multiple_match/multiple_match.cpp`。
+- `notebooks/multiple_match/` 以下のノートブックを開きます。
+- 補助ユーティリティ: `notebooks/multiple_match/multiple_match.cpp`
 
-## 設定
+## Configuration
 
 ### Conda environment
 
-主要な環境定義ファイル:
+主要な環境定義:
 
 - `notebooks/reconstruction/lensless.yaml`
 
-このファイルから読み取れる主な依存関係シグナル:
+主な依存関係:
 
 - `python=3.7`
 - `pytorch=1.9.0`
 - `pyro-ppl`
-- notebooks 内の `opencv` 周辺のコンピュータビジョンワークフロー依存関係
+- ノートブック内の `opencv` 関連コンピュータビジョンワークフロー依存
 
-### データとパス
+### Data and paths
 
-- **前提:** notebooks は、リポジトリルートで一元定義されていないローカルのデータセット/ファイルを前提としています。
-- **前提:** C++ マッチングユーティリティは、（実行パスからの相対で）グレースケール読み込み可能な画像を含む `all/` ディレクトリを想定しています。
+- **前提:** データセットはローカルに置かれており、リポジトリルートで一元管理されていません。
+- **前提:** C++ のマッチングユーティリティは、実行時パスからの相対位置にある `all/` ディレクトリ内に、グレースケール読み取り可能な画像が入っていることを想定しています。
 
-ローカル環境が異なる場合は、notebook のパス設定セルと C++ 入力ディレクトリを適宜更新してください。
+ローカル環境が異なる場合は、ノートブックのパス参照セルと C++ の入力ディレクトリを適切に更新してください。
 
-## 例
+## Examples
 
-### マッチングユーティリティを実行（例）
+### マッチングユーティリティの実行
 
 ```bash
 cd notebooks/multiple_match
@@ -190,67 +214,69 @@ g++ -std=c++17 multiple_match.cpp -o multiple_match `pkg-config --cflags --libs 
 ./multiple_match
 ```
 
-期待される挙動:
+想定される挙動:
 
-- `all/` から画像を読み込み
-- 画像間で連鎖的な SIFT ベースマッチングを計算
-- `result_<timestamp>.png` の形式で出力画像を書き出し
+- `all/` から画像を読み込む
+- SIFT ベースの連鎖マッチングを複数画像間で計算する
+- `result_<timestamp>.png` のような出力画像を書き出す
 
-### 特定 notebook を起動
+### 特定のノートブックを起動
 
 ```bash
 conda activate lensless
 jupyter notebook notebooks/reconstruction/dataset_prep.ipynb
 ```
 
-## 開発メモ
+## Development Notes
 
-- 現在、リポジトリルートにパッケージ定義（`pyproject.toml`、`requirements.txt`、`setup.py`）および CI/テストハーネスはありません。
-- 実験優先の運用で、アルゴリズムの多くは notebooks が一次情報です。
-- `camera/`、`light_source/`、`reconstruction/`、`three_axis_cnc/` は現在高レベルのモジュール説明が中心で、今後 runbook の拡充が可能です。
-- `i18n/` は存在し、多言語 README バリアント用に確保されています。
+- リポジトリルートにはパッケージ用のマニフェスト（`pyproject.toml`、`requirements.txt`、`setup.py`）や CI/test ハーネスは現在ありません。
+- 実験優先で、ノートブックが現行アルゴリズムの情報源（source-of-truth）です。
+- `camera/`、`light_source/`、`reconstruction/`、`three_axis_cnc/` にはコンポーネントレベルの説明があり、今後の運用手順書（runbook）追加の拡張ポイントになります。
+- `i18n/` は言語別ドキュメント用に準備済みです。
 
-## トラブルシューティング
+## Troubleshooting
 
-- **Conda solve issues:** Conda を更新してから環境作成を再試行してください。
-- **Kernel mismatch in notebooks:** 必要に応じて、アクティブカーネルが `lensless` と一致していることを確認してください。
-- **OpenCV/SIFT compile errors:** OpenCV contrib modules を導入し、`opencv2/xfeatures2d.hpp` が利用可能か確認してください。
-- **Notebook file-not-found errors:** notebook セルが想定するデータセットパスと相対ディレクトリを確認してください。
-- **C++ matcher reads no images:** `notebooks/multiple_match/all/` が存在し、有効な画像ファイルを含むことを確認してください。
+- **Conda の解決失敗:** Conda を更新し、チャネルの順序を確認して環境作成を再実行してください。
+- **ノートブックのカーネル不一致:** Jupyter が `lensless` 環境を使っているか確認してください。
+- **OpenCV/SIFT のビルドエラー:** OpenCV contrib モジュールをインストールし、`opencv2/xfeatures2d.hpp` が利用可能であることを確認してください。
+- **ノートブックのファイル未検出エラー:** 想定するデータセットとノートブック相対パスを確認してください。
+- **Matcher が画像を読めない:** `notebooks/multiple_match/all/` が存在し、有効な画像ファイルを含んでいるか確認してください。
 
-## ロードマップ
+## Roadmap
 
-- `camera/`、`light_source/`、`reconstruction/`、`three_axis_cnc/` のモジュール別 runbook を拡充。
-- データセット契約を文書化し、再現可能なサンプルデータ参照先を提供。
-- 主要 notebook パイプライン向けに再現可能なスクリプトを追加。
-- 再構成およびマッチング出力向けのテスト/検証チェックを追加。
-- `i18n/` 配下の多言語 README を完成。
+- `camera/`、`light_source/`、`reconstruction/`、`three_axis_cnc/` のモジュール別 runbook を拡張。
+- データセット仕様を文書化し、再現可能なサンプルデータ参照を提供。
+- 主要なノートブックパイプライン用にスクリプトラッパーを追加。
+- 再構成およびマッチング結果の検証チェックを追加。
+- `i18n/` 下で多言語 README を完成。
 
-## 参加方法
+## Getting Involved
 
-コラボレーションとコントリビューションを歓迎します。Lazeal OptiX プロジェクトへの参加に関心がある場合は、issue や pull request を送るか、直接ご連絡ください。
+コラボレーションや貢献を歓迎します。
+
+- 議論のために issue を立ててください。
+- 範囲の限定されたドキュメント修正や実験変更は pull request で提出してください。
+- 大規模なハードウェア/プロトコル変更前に、事前にメンテナと相談してください。
 
 ## Contributing
 
-1. リポジトリをフォークします。
-2. feature ブランチを作成します。
-3. 変更範囲を限定し、ドキュメント化してください（特に notebooks）。
-4. 動機・手法・検証内容を説明した pull request を作成します。
+1. リポジトリをフォークする。
+2. フィーチャーブランチを作成する。
+3. 変更範囲を絞って記録する（特にノートブックは必須）。
+4. 目的、方法、検証ノートを記載した pull request を作成する。
 
-ハードウェアやプロトコルに大きな変更を加える場合は、事前に issue を立てて方向性をそろえることを推奨します。
+## ❤️ Support
 
-## サポート
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
 
-このリポジトリでは現在、専用の資金提供/スポンサー情報は明示されていません。
+## License
 
-今後変更がある場合は、既存の技術ドキュメントを削除せず、このセクションにスポンサーおよび寄付の詳細を追記してください。
+現在、リポジトリルートにはライセンスファイルがありません。
 
-## ライセンス
+**前提/対応が必要:** `LICENSE` ファイルを追加し、このセクションを正確な SPDX 識別子に更新してください。
 
-現在、リポジトリルートにライセンスファイルは存在しません。
+## Contact
 
-**前提/必要な対応:** `LICENSE` ファイルを追加し、このセクションを正確な SPDX 識別子で更新してください。
-
-## 連絡先
-
-お問い合わせやコラボレーションのご相談は、`contact@lazealoptix.com` までご連絡ください。
+追加の問い合わせや共同作業の依頼は、`contact@lazealoptix.com` までご連絡ください。

@@ -1,11 +1,7 @@
 [English](../README.md) · [العربية](README.ar.md) · [Español](README.es.md) · [Français](README.fr.md) · [日本語](README.ja.md) · [한국어](README.ko.md) · [Tiếng Việt](README.vi.md) · [中文 (简体)](README.zh-Hans.md) · [中文（繁體）](README.zh-Hant.md) · [Deutsch](README.de.md) · [Русский](README.ru.md)
 
 
-> 🌐 **Trạng thái đa ngôn ngữ:** `i18n/` đã tồn tại và được dành riêng cho các tệp README theo từng ngôn ngữ. Các tài liệu bản địa hóa được liên kết đang ở trạng thái kế hoạch/đang thực hiện.
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/lachlanchen/lachlanchen/main/logos/banner.png" alt="LazyingArt banner" />
-</p>
+[![LazyingArt banner](https://github.com/lachlanchen/lachlanchen/raw/main/figs/banner.png)](https://github.com/lachlanchen/lachlanchen/blob/main/figs/banner.png)
 
 # Lazeal OptiX
 
@@ -16,6 +12,19 @@
 ![Jupyter](https://img.shields.io/badge/interface-jupyter-F37626)
 ![OpenCV](https://img.shields.io/badge/cv-opencv%204.x-5C3EE8)
 ![License](https://img.shields.io/badge/license-TBD-lightgrey)
+![Localization](https://img.shields.io/badge/localization-11%20languages-8A4FFF)
+![Platform](https://img.shields.io/badge/platform-linux%2FmacOS-2D9CDB)
+
+> 🌐 **Tình trạng đa ngôn ngữ:** `i18n/` đã có mặt và dành riêng cho các file README theo từng ngôn ngữ. Tài liệu nội dung địa phương hóa đã được lên kế hoạch/đang trong quá trình triển khai.
+
+## ✨ Tổng quan nhanh
+
+| Trọng tâm | Vị trí |
+|---|---|
+| Dòng công việc chính | `notebooks/` |
+| Đặc tả môi trường | `notebooks/reconstruction/lensless.yaml` |
+| Ghi chú thành phần | `camera/`, `light_source/`, `reconstruction/`, `three_axis_cnc/` |
+| Tài liệu khởi động | `i18n/README.*.md` |
 
 <table width="100%">
   <tr>
@@ -28,37 +37,41 @@
   </tr>
 </table>
 
-*Mẫu thử cho sử dụng cá nhân (trái) và sử dụng tổ chức (phải)*
+*Nguyên mẫu cho sử dụng cá nhân (bên trái) và sử dụng cho tổ chức (bên phải)*
 
 ## Tổng quan
 
-Lazeal OptiX là một dự án công nghệ y tế đổi mới. Trọng tâm của dự án là phát triển một thiết bị cung cấp khả năng chẩn đoán tiên tiến cho người dùng ngay tại nhà. Bằng cách sử dụng các kỹ thuật kính hiển vi tiên tiến và phân tích sinh hóa, thiết bị hướng tới việc hỗ trợ phát hiện sớm nhiều vấn đề sức khỏe, từ đó góp phần cải thiện kết quả chăm sóc y tế.
+Lazeal OptiX là một dự án nghiên cứu/ nguyên mẫu cho quy trình hình ảnh không kính trong các ứng dụng chẩn đoán liên quan y tế. Hiện tại kho lưu trữ chủ yếu theo hướng notebook-centric và mang tính thử nghiệm, nhằm mục tiêu giúp các phương pháp chẩn đoán tiên tiến tiếp cận tốt hơn trong các bối cảnh hạn chế.
 
-Dự án Lazeal OptiX ra đời từ cam kết giảm bớt đau khổ và giúp chẩn đoán sức khỏe dễ tiếp cận hơn cho mọi người. Bằng việc trang bị cho cá nhân các công cụ để chủ động kiểm soát sức khỏe, chúng tôi mong muốn góp phần tạo nên một xã hội khỏe mạnh hơn.
+Những ý tưởng cốt lõi bao gồm:
 
-Kho mã hiện định hướng nghiên cứu/mẫu thử và lấy notebook làm trung tâm. Phần lớn chi tiết triển khai và thí nghiệm được theo dõi trong các Jupyter notebook dưới `notebooks/`.
+- tái tạo ảnh không kính,
+- định vị nguồn sáng,
+- ghép và căn chỉnh nhiều ảnh.
 
-### Tóm tắt nhanh
+Kho lưu trữ này chủ yếu được duy trì qua các Jupyter notebook trong `notebooks/`, với ngữ cảnh theo từng module được lưu trong các thư mục chuyên biệt.
 
-| Khu vực | Trạng thái hiện tại |
+### Ảnh chụp nhanh trạng thái kho lưu trữ
+
+| Khu vực | Tình trạng hiện tại |
 |---|---|
-| Mức độ hoàn thiện dự án | Mẫu thử nghiên cứu |
-| Mô hình thực thi chính | Quy trình Jupyter notebook |
-| Miền thí nghiệm chính | Tái tạo ảnh, định vị nguồn sáng, so khớp đa ảnh |
-| Packaging/CI ở thư mục gốc | Chưa được khai báo |
-| Tài liệu đa ngôn ngữ | Có sẵn khung thư mục `i18n/` |
+| Độ chín muồi dự án | Nguyên mẫu nghiên cứu |
+| Mô hình thực thi chính | Quy trình làm việc bằng notebook |
+| Miền thử nghiệm chính | Tái tạo, định vị nguồn sáng, ghép nhiều ảnh |
+| Packaging/CI tại root | Hiện chưa được khai báo |
+| Tài liệu đa ngôn ngữ | Thư mục `i18n/` đã được chuẩn bị |
 
 ## Tính năng
 
-1. **Kính hiển vi tiên tiến:** Tận dụng các kỹ thuật kính hiển vi tiên tiến để phân tích chi tiết.
-2. **Phân tích sinh hóa:** Phân tích sinh hóa chuyên sâu giúp phát hiện nhiều chỉ dấu sức khỏe khác nhau.
-3. **Thân thiện với người dùng:** Được thiết kế để dùng tại nhà, cung cấp giao diện đơn giản và dễ tiếp cận.
-4. **Nhỏ gọn và chi phí hợp lý:** Lazeal OptiX có thiết kế nhỏ gọn, mức giá hợp lý, đưa khả năng chẩn đoán tiên tiến đến người dùng hằng ngày.
-5. **Quy trình tái tạo không thấu kính:** Các pipeline ảnh tính toán và tái tạo dựa trên notebook.
-6. **Thí nghiệm định vị nguồn sáng:** Notebook tối ưu hóa cho ước lượng vị trí nguồn sáng.
-7. **Tiện ích so khớp đa ảnh:** Quy trình notebook và C++ OpenCV cho so khớp/căn chỉnh đặc trưng.
+1. **Khái niệm kính hiển vi nâng cao**: quang học và mẫu thu ảnh nâng cao phục vụ phân tích chi tiết.
+2. **Ngữ cảnh sinh hóa / chẩn đoán**: quy trình thử nghiệm hướng tới phát hiện chỉ báo sức khỏe.
+3. **Hướng đến người dùng tại nhà**: thiết kế nhằm sử dụng dễ tiếp cận và triển khai thực tế.
+4. **Trải nghiệm ưu tiên máy tính xách tay**: notebook là con đường thực thi chính.
+5. **Công cụ tái tạo không kính**: pipeline tính toán cho tái tạo độ phân giải cao.
+6. **Công cụ định vị nguồn sáng**: thí nghiệm về xác định vị trí nguồn và hiệu chuẩn hình học.
+7. **Ghép nhiều ảnh**: công cụ ghép bằng SIFT, nối chuỗi và căn chỉnh.
 
-## Cấu trúc kho mã
+## Cấu trúc dự án
 
 ```text
 lazealoptix/
@@ -79,44 +92,54 @@ lazealoptix/
 │   └── README.md
 ├── notebooks/
 │   ├── light_source_location/
+│   │   ├── light_source_location_estimator_v1.4.ipynb
+│   │   ├── light_source_location_estimator_varied_heights_v1.1.4.ipynb
+│   │   └── light_source_location_estimator_varied_heights_v1.1.7.ipynb
 │   ├── multiple_match/
+│   │   ├── multiple_all_combination_v2.ipynb
+│   │   ├── multiple_match.cpp
+│   │   ├── multiple_match_centeralized_v1.6.ipynb
+│   │   └── multiple_match_chain_v1.5.ipynb
 │   └── reconstruction/
+│       ├── dataset_prep.ipynb
+│       ├── lensless.yaml
+│       └── lensless-dropout-one-led-mahuichong.ipynb
 └── i18n/
 ```
 
-### Ghi chú mô-đun
+### Ghi chú module
 
-- `camera/`: script/tài nguyên liên quan đến sử dụng camera để chụp mẫu độ phân giải cao.
-- `light_source/`: script/tài nguyên cho điều khiển và tối ưu nguồn sáng.
-- `reconstruction/`: script/tài nguyên cho tái tạo tính toán.
-- `three_axis_cnc/`: script/tài nguyên cho định vị/điều khiển CNC ba trục.
+- `camera/`: các script/tài nguyên liên quan đến việc sử dụng camera cho chụp mẫu độ phân giải cao.
+- `light_source/`: các script/tài nguyên cho điều khiển và tối ưu nguồn sáng.
+- `reconstruction/`: các script/tài nguyên cho tái tạo tính toán.
+- `three_axis_cnc/`: các script/tài nguyên cho định vị/điều khiển CNC ba trục.
 - `notebooks/`: không gian làm việc kỹ thuật chính cho thí nghiệm và phương pháp.
 
 ## Notebooks
 
-Thư mục `notebooks` chứa các Jupyter notebook ghi lại nhiều khía cạnh của dự án Lazeal OptiX. Các notebook này bao gồm mã nguồn, trực quan hóa và giải thích chi tiết về phương pháp của dự án. Chúng là cách tương tác để khám phá và hiểu dự án.
+Thư mục `notebooks` chứa các Jupyter notebook ghi lại các phương pháp thí nghiệm cốt lõi. Các notebook này cung cấp mã, trực quan hóa và ghi chú phương pháp cho từng mảng.
 
 ### `light_source_location`
 
-Thư mục `light_source_location` chứa các notebook liên quan đến ước lượng vị trí nguồn sáng. Các notebook này trình bày thuật toán và phương pháp dùng để ước lượng chính xác vị trí nguồn sáng, một thành phần quan trọng của dự án Lazeal OptiX.
+Chứa các notebook liên quan đến ước lượng vị trí nguồn sáng. Các phương pháp này hỗ trợ hiệu chuẩn hình học nguồn và độ chính xác tái tạo.
 
 ### `multiple_match`
 
-Thư mục `multiple_match` chứa notebook và script liên quan đến so khớp nhiều ảnh hoặc mẫu. Phần này của dự án sử dụng các thuật toán phức tạp để so khớp và căn chỉnh ảnh chính xác, điều cần thiết cho việc tái tạo ảnh độ phân giải cao từ hệ thống ảnh không thấu kính.
+Chứa notebook và script cho ghép/căn chỉnh hình ảnh/chấm mẫu nhằm hỗ trợ quy trình đăng ký (registration) ổn định.
 
 ### `reconstruction`
 
-Thư mục `reconstruction` chứa các notebook liên quan đến tái tạo ảnh được chụp bởi thiết bị Lazeal OptiX. Các notebook này ghi lại các kỹ thuật tính toán tiên tiến dùng để tái tạo ảnh độ phân giải cao từ hệ thống ảnh không thấu kính.
+Chứa notebook liên quan đến tái tạo từ ảnh đã thu thập, bao gồm tiền xử lý và script thí nghiệm.
 
 ## Điều kiện tiên quyết
 
-- OS: Khuyến nghị Linux/macOS cho quy trình notebook và OpenCV hiện tại.
-- Python: Tệp môi trường được cung cấp nhắm tới **Python 3.7**.
-- Conda: Bắt buộc để tái tạo môi trường `lensless` đã được mô tả.
+- Hệ điều hành: Linux/macOS được khuyến nghị cho quy trình Conda và OpenCV hiện tại.
+- Python: môi trường nhắm đến **Python 3.7**.
+- Conda: cần thiết để tái tạo môi trường `lensless` đã được mô tả.
 - Jupyter Notebook/Lab.
 - Bộ công cụ C++ tùy chọn cho `multiple_match.cpp`:
-  - `g++` hỗ trợ C++17.
-  - OpenCV 4.x kèm contrib modules (`opencv2/xfeatures2d.hpp` / SIFT).
+  - `g++` với hỗ trợ C++17.
+  - OpenCV 4.x cùng các module góp phần (`opencv2/xfeatures2d.hpp` / SIFT).
 
 ## Cài đặt
 
@@ -127,14 +150,14 @@ git clone https://github.com/lachlanchen/lazealoptix.git
 cd lazealoptix
 ```
 
-### 2) Tạo môi trường notebook (khuyến nghị)
+### 2) Tạo môi trường notebook
 
 ```bash
 conda env create -f notebooks/reconstruction/lensless.yaml
 conda activate lensless
 ```
 
-### 3) Khởi chạy Jupyter
+### 3) Khởi động Jupyter
 
 ```bash
 jupyter notebook
@@ -142,47 +165,47 @@ jupyter notebook
 
 ## Cách sử dụng
 
-Kho mã này chủ yếu được sử dụng bằng cách mở notebook và chạy các cell theo thứ tự.
+Kho lưu trữ này chủ yếu được sử dụng bằng cách mở notebook và chạy từng cell theo thứ tự đã tài liệu hóa.
 
-### Nhánh tái tạo
+### Dòng tái tạo
 
-- Mở `notebooks/reconstruction/dataset_prep.ipynb` để chuẩn bị dữ liệu.
-- Mở `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb` cho thí nghiệm tái tạo/huấn luyện.
+- Mở `notebooks/reconstruction/dataset_prep.ipynb` để chuẩn bị bộ dữ liệu.
+- Mở `notebooks/reconstruction/lensless-dropout-one-led-mahuichong.ipynb` cho các thí nghiệm tái tạo/huấn luyện.
 
-### Nhánh định vị nguồn sáng
+### Dòng định vị nguồn sáng
 
-- Mở các notebook dưới `notebooks/light_source_location/`.
+- Mở các notebook trong `notebooks/light_source_location/`.
 
-### Nhánh multiple match
+### Dòng ghép nhiều ảnh
 
-- Mở các notebook dưới `notebooks/multiple_match/`.
-- Tiện ích C++ tùy chọn: `notebooks/multiple_match/multiple_match.cpp`.
+- Mở các notebook trong `notebooks/multiple_match/`.
+- Tiện ích tùy chọn: `notebooks/multiple_match/multiple_match.cpp`.
 
 ## Cấu hình
 
 ### Môi trường Conda
 
-Đặc tả môi trường chính nằm tại:
+Đặc tả môi trường chính:
 
 - `notebooks/reconstruction/lensless.yaml`
 
-Một số tín hiệu phụ thuộc đáng chú ý từ tệp này bao gồm:
+Các phụ thuộc đáng chú ý bao gồm:
 
 - `python=3.7`
 - `pytorch=1.9.0`
 - `pyro-ppl`
-- Các phụ thuộc quy trình thị giác máy tính liên quan `opencv` trong notebook
+- `opencv` và các phụ thuộc workflow thị giác máy tính liên quan trong notebook
 
 ### Dữ liệu và đường dẫn
 
-- **Giả định:** notebook kỳ vọng dữ liệu/tệp cục bộ chưa được khai báo tập trung ở thư mục gốc của kho.
-- **Giả định:** tiện ích so khớp C++ kỳ vọng có thư mục `all/` (tương đối với đường dẫn thực thi) chứa ảnh có thể đọc ở thang xám.
+- **Giả định:** các bộ dữ liệu được lưu tại máy cục bộ và không được khai báo tập trung tại root của repository.
+- **Giả định:** tiện ích khớp C++ mong đợi một thư mục `all/` (tương đối với đường dẫn chạy của nó) chứa ảnh đọc được ở thang độ xám.
 
-Nếu thiết lập cục bộ của bạn khác, hãy cập nhật các cell đường dẫn trong notebook và thư mục đầu vào C++ cho phù hợp.
+Nếu cấu hình cục bộ của bạn khác, hãy cập nhật lại các ô đường dẫn trong notebook và thư mục đầu vào của C++ cho phù hợp.
 
 ## Ví dụ
 
-### Chạy tiện ích so khớp (ví dụ)
+### Chạy tiện ích ghép ảnh
 
 ```bash
 cd notebooks/multiple_match
@@ -190,13 +213,13 @@ g++ -std=c++17 multiple_match.cpp -o multiple_match `pkg-config --cflags --libs 
 ./multiple_match
 ```
 
-Hành vi dự kiến:
+Kết quả dự kiến:
 
 - Đọc ảnh từ `all/`
-- Tính toán chuỗi so khớp dựa trên SIFT giữa các ảnh
-- Ghi ảnh đầu ra có tên dạng `result_<timestamp>.png`
+- Tính toán chuỗi ghép dựa trên SIFT giữa các ảnh
+- Ghi ảnh kết quả dạng `result_<timestamp>.png`
 
-### Mở một notebook cụ thể
+### Khởi chạy một notebook cụ thể
 
 ```bash
 conda activate lensless
@@ -205,52 +228,48 @@ jupyter notebook notebooks/reconstruction/dataset_prep.ipynb
 
 ## Ghi chú phát triển
 
-- Kho mã hiện chưa có packaging ở mức thư mục gốc (`pyproject.toml`, `requirements.txt`, hoặc `setup.py`) và chưa có CI/test harness ở thư mục gốc.
-- Cách làm việc ưu tiên thí nghiệm: notebook là nguồn sự thật cho phần lớn thuật toán.
-- `camera/`, `light_source/`, `reconstruction/`, và `three_axis_cnc/` hiện cung cấp mô tả mô-đun mức cao và có thể mở rộng bằng runbook theo thời gian.
-- `i18n/` đã tồn tại và được dành cho các biến thể README đa ngôn ngữ.
+- Hiện không có manifest đóng gói cấp root (`pyproject.toml`, `requirements.txt`, `setup.py`) hay bộ công cụ CI/test.
+- Công việc theo hướng thí nghiệm trước; notebook là nguồn sự thật (source-of-truth) cho thuật toán hiện tại.
+- `camera/`, `light_source/`, `reconstruction/`, và `three_axis_cnc/` chứa mô tả theo từng thành phần và là điểm mở rộng tốt cho runbooks.
+- `i18n/` đã sẵn sàng cho tài liệu theo ngôn ngữ.
 
 ## Khắc phục sự cố
 
-- **Lỗi giải phụ thuộc Conda:** cập nhật Conda rồi thử tạo lại môi trường.
-- **Sai kernel trong notebook:** đảm bảo kernel đang dùng khớp với `lensless` khi cần.
-- **Lỗi biên dịch OpenCV/SIFT:** cài OpenCV contrib modules và kiểm tra tính sẵn có của `opencv2/xfeatures2d.hpp`.
-- **Notebook lỗi không tìm thấy tệp:** kiểm tra đường dẫn dữ liệu và các thư mục tương đối mà cell notebook kỳ vọng.
-- **Bộ so khớp C++ không đọc được ảnh:** xác minh `notebooks/multiple_match/all/` tồn tại và chứa tệp ảnh hợp lệ.
+- **Vấn đề giải dependency Conda:** cập nhật Conda, kiểm tra thứ tự channel, và thử tạo môi trường lại.
+- **Sai mismatch kernel trong notebook:** xác nhận Jupyter đang dùng môi trường `lensless`.
+- **Lỗi biên dịch OpenCV/SIFT:** cài đặt OpenCV có module contrib và xác minh khả dụng của `opencv2/xfeatures2d.hpp`.
+- **Lỗi file-not-found của notebook:** kiểm tra dataset và đường dẫn tương đối theo notebook.
+- **Matcher không đọc được ảnh:** đảm bảo `notebooks/multiple_match/all/` tồn tại và chứa ảnh hợp lệ.
 
 ## Lộ trình
 
-- Mở rộng runbook cấp mô-đun trong `camera/`, `light_source/`, `reconstruction/`, và `three_axis_cnc/`.
-- Tài liệu hóa hợp đồng dữ liệu và cung cấp tham chiếu dữ liệu mẫu có thể tái lập.
-- Bổ sung script tái lập cho các pipeline notebook trọng yếu.
-- Bổ sung kiểm tra test/xác thực cho đầu ra tái tạo và so khớp.
-- Hoàn thiện các tệp README đa ngôn ngữ dưới `i18n/`.
+- Mở rộng các runbook theo module trong `camera/`, `light_source/`, `reconstruction/`, và `three_axis_cnc/`.
+- Tài liệu hóa hợp đồng dữ liệu và cung cấp tham chiếu mẫu dữ liệu có thể tái lập.
+- Thêm script wrapper cho các pipeline notebook chính.
+- Thêm kiểm tra xác thực cho đầu ra tái tạo và ghép ảnh.
+- Hoàn thiện README đa ngôn ngữ trong `i18n/`.
 
 ## Tham gia đóng góp
 
-Chúng tôi hoan nghênh cộng tác và đóng góp. Nếu bạn muốn tham gia dự án Lazeal OptiX, hãy gửi issue hoặc pull request, hoặc liên hệ trực tiếp với chúng tôi.
+Chúng tôi hoan nghênh hợp tác và đóng góp.
 
-## Đóng góp
-
-1. Fork repository.
-2. Tạo một nhánh tính năng.
-3. Giữ phạm vi thay đổi rõ ràng và có tài liệu (đặc biệt với notebook).
-4. Mở pull request mô tả động lực, phương pháp và cách xác thực.
-
-Nếu bạn dự định thay đổi lớn về phần cứng/giao thức, nên mở issue trước để thống nhất.
-
-## Hỗ trợ
-
-Hiện chưa có metadata tài trợ/tài chính chuyên dụng được khai báo trong kho mã này.
-
-Nếu điều này thay đổi, thông tin tài trợ và quyên góp nên được thêm vào đây mà không xóa tài liệu kỹ thuật hiện có.
+- Mở issue để thảo luận.
+- Tạo pull request cho các thay đổi tài liệu có phạm vi rõ ràng hoặc thay đổi thực nghiệm.
+- Liên hệ với nhóm duy trì trước khi đề xuất thay đổi lớn ở mức phần cứng và giao thức.
 
 ## Giấy phép
 
-Hiện chưa có tệp giấy phép ở thư mục gốc của kho mã.
+Hiện không có file giấy phép nào trong root của repository.
 
-**Giả định/Hành động cần thiết:** thêm tệp `LICENSE` và cập nhật mục này với mã định danh SPDX chính xác.
+**Giả định/Hành động cần thiết:** thêm file `LICENSE` và cập nhật mục này theo mã SPDX chính xác.
 
 ## Liên hệ
 
-Để biết thêm thông tin hoặc trao đổi hợp tác, vui lòng liên hệ `contact@lazealoptix.com`.
+Để được trao đổi thêm hoặc quan tâm hợp tác, hãy liên hệ qua `contact@lazealoptix.com`.
+
+
+## ❤️ Support
+
+| Donate | PayPal | Stripe |
+| --- | --- | --- |
+| [![Donate](https://camo.githubusercontent.com/24a4914f0b42c6f435f9e101621f1e52535b02c225764b2f6cc99416926004b7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f446f6e6174652d4c617a79696e674172742d3045413545393f7374796c653d666f722d7468652d6261646765266c6f676f3d6b6f2d6669266c6f676f436f6c6f723d7768697465)](https://chat.lazying.art/donate) | [![PayPal](https://camo.githubusercontent.com/d0f57e8b016517a4b06961b24d0ca87d62fdba16e18bbdb6aba28e978dc0ea21/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f50617950616c2d526f6e677a686f754368656e2d3030343537433f7374796c653d666f722d7468652d6261646765266c6f676f3d70617970616c266c6f676f436f6c6f723d7768697465)](https://paypal.me/RongzhouChen) | [![Stripe](https://camo.githubusercontent.com/1152dfe04b6943afe3a8d2953676749603fb9f95e24088c92c97a01a897b4942/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f5374726970652d446f6e6174652d3633354246463f7374796c653d666f722d7468652d6261646765266c6f676f3d737472697065266c6f676f436f6c6f723d7768697465)](https://buy.stripe.com/aFadR8gIaflgfQV6T4fw400) |
